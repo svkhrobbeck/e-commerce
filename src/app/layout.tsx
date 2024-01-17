@@ -1,23 +1,27 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ReactNode } from "react";
 import "./globals.css";
+import "@/service/axios";
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
+import { Footer, Header } from "@/components";
+import { IRootLayoutProps } from "@/interfaces/props";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Ecommerce",
   description: "NextJS 13 Ecommerce Website",
 };
 
-interface IRootLayoutProps {
-  children: ReactNode;
-}
-
 const RootLayout = ({ children }: IRootLayoutProps) => {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className="box-border h-full scroll-smooth" lang="en">
+      <body
+        className={`${montserrat.className} flex flex-col h-full min-h-full`}
+      >
+        <Header />
+        <main className="flex-grow-[1]">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 };
