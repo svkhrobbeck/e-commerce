@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="flex items-center px-4 md:px-[48px] py-[8px] justify-between fixed top-0 w-full z-50 shadow bg-white">
+    <header className="flex items-center px-4 md:px-[48px] py-[8px] justify-between sticky top-0 w-full z-50 shadow bg-white">
       <Link className="flex" href="/">
         <Image src={logoPic} alt="e-commerce logo" width={162} height={36} />
       </Link>
@@ -20,15 +20,18 @@ const Header = () => {
           ))}
           {/* button */}
           <li>
-            <button className="button bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-gray-600">
-              Sign in
-            </button>
+            <Link
+              className="button bg-blue-600 text-white border-transparent hover:border-blue-600 hover:bg-transparent hover:text-gray-600"
+              href="/shopping-cart"
+            >
+              My Bag
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <button className="button bg-transparent border-blue-600 hover:border-transparent hover:bg-blue-600 hover:text-white">
               Sign up
             </button>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
