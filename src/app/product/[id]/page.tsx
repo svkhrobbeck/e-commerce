@@ -2,7 +2,16 @@ import { CustomImage } from "@/components";
 import { API_ENDPOINTS } from "@/constants";
 import { ProductPageProps } from "@/interfaces/props";
 import ProductsApi from "@/service/products";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+export const generateMetadata = async ({
+  params,
+}: ProductPageProps): Promise<Metadata> => {
+  const product = await ProductsApi.getOne(API_ENDPOINTS.PRODUCT, params.id);
+
+  return { title: `Ecommerce | ${product.title}` };
+};
 
 const ProductPage = async ({ params }: ProductPageProps) => {
   try {

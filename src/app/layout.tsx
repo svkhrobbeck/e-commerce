@@ -9,7 +9,7 @@ import { ToastContainer } from "react-toastify";
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Ecommerce",
+  title: "Ecommerce | Home",
   description: "NextJS 13 yordamida yaratilgan onlayn do'kon vebsayti",
   icons: "/favicon.svg",
   authors: { name: "Suhrobbek Soatov", url: "https://soatov.uz" },
@@ -33,7 +33,7 @@ const RootLayout = ({ children }: IRootLayoutProps) => {
       <body className={`${montserrat.className} flex flex-col min-h-full`}>
         <ToastContainer />
         <Header />
-        <main className="flex-grow-[1]">{children}</main>
+        <div className="flex-grow-[1]">{children}</div>
         <Footer />
       </body>
     </html>
