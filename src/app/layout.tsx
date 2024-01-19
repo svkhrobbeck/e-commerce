@@ -1,9 +1,10 @@
 import "./globals.css";
-import "@/service/axios";
+import "react-toastify/dist/ReactToastify.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Footer, Header } from "@/components";
 import { IRootLayoutProps } from "@/interfaces/props";
+import { ToastContainer } from "react-toastify";
 
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
@@ -15,9 +16,8 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: IRootLayoutProps) => {
   return (
     <html className="box-border h-full scroll-smooth" lang="en">
-      <body
-        className={`${montserrat.className} flex flex-col h-full min-h-full`}
-      >
+      <body className={`${montserrat.className} flex flex-col min-h-full`}>
+        <ToastContainer />
         <Header />
         <main className="flex-grow-[1]">{children}</main>
         <Footer />
