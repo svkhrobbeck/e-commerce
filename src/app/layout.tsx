@@ -10,7 +10,21 @@ const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Ecommerce",
-  description: "NextJS 13 Ecommerce Website",
+  description: "NextJS 13 yordamida yaratilgan onlayn do'kon vebsayti",
+  icons: "/favicon.svg",
+  authors: { name: "Suhrobbek Soatov", url: "https://soatov.uz" },
+  keywords: [
+    "ecommerce",
+    "onlayn do'kon",
+    "do'kon",
+    "Suhrobbek",
+    "Soatov",
+    "Shop",
+    "Bozor",
+    "e-commerce",
+    "Suhrobbek Soatov",
+  ],
+  category: "online-shop",
 };
 
 const RootLayout = ({ children }: IRootLayoutProps) => {
