@@ -12,3 +12,7 @@ export interface CustomImageProps {
   image: string;
   title: string;
 }
+
+export interface ProductPageProps {
+  params: { id: string };
+}
