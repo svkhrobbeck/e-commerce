@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="text-gray-600 body-font pt-6">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
         <Link href={"/"}>
           <Image src={logoPic} alt={"logo"} width={162} height={36} />
