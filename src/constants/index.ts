@@ -6,6 +6,10 @@ export const navLinks: INavLink[] = [
     text: "Home",
   },
   {
+    route: "/contacts",
+    text: "Contacts",
+  },
+  {
     route: "/products",
     text: "All Products",
   },

@@ -1,4 +1,4 @@
-import { Hero, Product } from "@/components";
+import { Hero, Product, Statistics } from "@/components";
 import { API_ENDPOINTS } from "@/constants";
 import { IProduct } from "@/interfaces";
 import ProductsApi from "@/service/products";
@@ -21,6 +21,7 @@ const HomePage = async () => {
           </div>
         </section>
       </div>
+      <Statistics />
     </>
   );
 };
