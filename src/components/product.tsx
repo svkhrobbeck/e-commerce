@@ -7,7 +7,7 @@ const Product: FC<IProduct> = product => {
   return (
     <Link
       className="bg-gray-100 p-4 rounded-lg flex flex-col group hover:scale-105 transition-transform ease-out duration-200 border"
-      href={`/products/${product.id}`}
+      href={`/product/${product.id}`}
     >
       <div className="w-full relative max-h-[300px] h-full bg-white overflow-hidden rounded-md mb-6">
         <CustomImage {...product} />
