@@ -18,7 +18,7 @@ const CustomImage: FC<CustomImageProps> = props => {
       className={`${
         fill ? "" : `h-[${height || 300}px]`
       } w-full object-contain object-center ${loadingClasses}`}
-      onLoadingComplete={handleLoadingComplete}
+      onLoad={handleLoadingComplete}
       src={image}
       alt={title}
       fill={fill}
