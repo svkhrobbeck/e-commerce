@@ -5,3 +5,4 @@ export { default as Hero } from "./hero";
 export { default as CustomImage } from "./custom-image";
 export { default as Feature } from "./feature";
 export { default as Cta } from "./cta";
+export { default as Statistics } from "./statistics";
