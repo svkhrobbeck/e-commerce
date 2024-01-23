@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { IProduct } from ".";
 
 export interface IRootLayoutProps {
   children: ReactNode;
