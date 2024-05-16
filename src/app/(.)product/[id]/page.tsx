@@ -1,16 +1,17 @@
 "use client";
+import { FC, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
-import { CustomImage } from "@/components";
-import { API_ENDPOINTS } from "@/constants";
-import { IProduct } from "@/interfaces";
-import { ProductPageProps } from "@/interfaces/props";
-import ProductsApi from "@/service/products";
 import { Dialog } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/16/solid";
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
-import { useRouter } from "next/navigation";
-import { FC, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+
+import { IProduct } from "@/interfaces";
+import { CustomImage } from "@/components";
+import { API_ENDPOINTS } from "@/constants";
+import ProductsApi from "@/service/products";
+import { ProductPageProps } from "@/interfaces/props";
 
 const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
   const [loading, setLoading] = useState<boolean>(false);
