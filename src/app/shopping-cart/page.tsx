@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import ClientPage from "./page.client";
+
+import { ShoppingCart } from "@/components";
 
 export const metadata: Metadata = {
   title: "Ecommerce | Shopping Cart",
 };
 
 const ShoppingCartPage = () => {
-  return <ClientPage />;
+  return <ShoppingCart />;
 };
 
 export default ShoppingCartPage;

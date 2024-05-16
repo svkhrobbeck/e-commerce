@@ -8,7 +8,6 @@ import ProductsApi from "@/service/products";
 import { Dialog } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/16/solid";
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
-import type { Metadata } from "next";
 import { useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -35,8 +34,7 @@ const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
   };
 
   const handleAddCartClick = () => {
-    const products: IProduct[] =
-      JSON.parse(localStorage.getItem("carts") as string) || [];
+    const products: IProduct[] = JSON.parse(localStorage.getItem("carts") as string) || [];
 
     const isExistProduct = products.find(c => c.id === product?.id);
 
@@ -62,11 +60,7 @@ const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
 
   return (
     <>
-      <Dialog
-        open={isOpen}
-        onClose={handleCloseDialog}
-        className="relative z-50"
-      >
+      <Dialog open={isOpen} onClose={handleCloseDialog} className="relative z-50">
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -95,10 +89,7 @@ const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
                                 length: Math.round(product.rating?.rate),
                               },
                               (_, i) => (
-                                <StarIcon
-                                  key={i}
-                                  className="h-4 w-4 text-yellow-500"
-                                />
+                                <StarIcon key={i} className="h-4 w-4 text-yellow-500" />
                               )
                             )}
                             {Array.from(
@@ -106,10 +97,7 @@ const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
                                 length: 5 - Math.round(product.rating?.rate),
                               },
                               (_, i) => (
-                                <StarIconOutline
-                                  key={i}
-                                  className="h-4 w-4 text-yellow-500"
-                                />
+                                <StarIconOutline key={i} className="h-4 w-4 text-yellow-500" />
                               )
                             )}
                           </div>
@@ -118,9 +106,7 @@ const ProductParallelPage: FC<ProductPageProps> = ({ params }) => {
                           See all {product?.rating?.count} reviews
                         </p>
                       </div>
-                      <p className="line-clamp-5 text-sm">
-                        {product?.description}
-                      </p>
+                      <p className="line-clamp-5 text-sm">{product?.description}</p>
                     </div>
 
                     <div className="space-y-3 text-sm">

@@ -1,13 +1,14 @@
 "use client";
 
-import CustomImage from "@/components/custom-image";
-import { IProduct } from "@/interfaces";
-import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
-import { StarIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const ShoppingCartClientPage = () => {
+import { IProduct } from "@/interfaces";
+import CustomImage from "@/components/custom-image";
+import { StarIcon } from "@heroicons/react/24/solid";
+import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
+
+const ShoppingCart = () => {
   const [total, setTotal] = useState<number>(0);
   const [products, setProducts] = useState<IProduct[]>(
     JSON.parse(localStorage.getItem("carts") as string) || []
@@ -97,10 +98,7 @@ const ShoppingCartClientPage = () => {
                                 length: Math.floor(product.rating.rate),
                               },
                               (_, i) => (
-                                <StarIcon
-                                  key={i}
-                                  className="h-4 w-4 text-yellow-500"
-                                />
+                                <StarIcon key={i} className="h-4 w-4 text-yellow-500" />
                               )
                             )}
                             {Array.from(
@@ -108,10 +106,7 @@ const ShoppingCartClientPage = () => {
                                 length: 5 - Math.floor(product.rating.rate),
                               },
                               (_, i) => (
-                                <StarIconOutline
-                                  key={i}
-                                  className="h-4 w-4 text-yellow-500"
-                                />
+                                <StarIconOutline key={i} className="h-4 w-4 text-yellow-500" />
                               )
                             )}
                           </div>
@@ -146,13 +141,10 @@ const ShoppingCartClientPage = () => {
                       </div>
                       <div className="flex items-center space-x-4">
                         <p className="text-sm">
-                          {(product.price * product.quantity).toLocaleString(
-                            "en-US",
-                            {
-                              style: "currency",
-                              currency: "usd",
-                            }
-                          )}
+                          {(product.price * product.quantity).toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "usd",
+                          })}
                         </p>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -252,4 +244,4 @@ const ShoppingCartClientPage = () => {
   );
 };
 
-export default ShoppingCartClientPage;
+export default ShoppingCart;
