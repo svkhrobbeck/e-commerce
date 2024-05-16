@@ -1,10 +1,12 @@
 "use client";
-import { CustomImageProps } from "@/interfaces/props";
-import Image from "next/image";
 import { FC, useState } from "react";
+import Image from "next/image";
+import cx from "classnames";
+
+import { CustomImageProps } from "@/interfaces/props";
 
 const CustomImage: FC<CustomImageProps> = props => {
-  const { title, image, fill, height, width } = props;
+  const { title, className = "", image, fill, height, width } = props;
   const [isLoading, setIsLoading] = useState(true);
 
   const loadingClasses = isLoading
@@ -15,9 +17,12 @@ const CustomImage: FC<CustomImageProps> = props => {
 
   return (
     <Image
-      className={`${
-        fill ? "" : `h-[${height || 300}px]`
-      } w-full object-contain object-center ${loadingClasses}`}
+      className={cx(
+        fill ? "" : `h-[${height || 300}px]`,
+        "w-full object-contain object-center",
+        loadingClasses,
+        className
+      )}
       onLoad={handleLoadingComplete}
       src={image}
       alt={title}

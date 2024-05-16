@@ -10,6 +10,7 @@ export interface CustomImageProps {
   height?: number;
   image: string;
   title: string;
+  className?: string;
 }
 
 export interface ProductPageProps {

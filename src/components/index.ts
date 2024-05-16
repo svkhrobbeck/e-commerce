@@ -6,4 +6,3 @@ export { default as Product } from "./product";
 export { default as Feature } from "./feature";
 export { default as Statistics } from "./statistics";
 export { default as CustomImage } from "./custom-image";
-export { default as ShoppingCart } from "./shopping-cart";

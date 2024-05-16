@@ -1,12 +1,14 @@
+import CustomImage from "./custom-image";
+
 const Hero = () => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <img
+          <CustomImage
             className="object-cover object-center rounded"
-            alt="hero"
-            src="https://dummyimage.com/720x600"
+            title="hero"
+            image="https://dummyimage.com/720x600"
           />
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -14,15 +16,12 @@ const Hero = () => {
             Knausgaard typewriter readymade marfa
           </h1>
           <p className="mb-8 leading-relaxed">
-            Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid
-            swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.
+            Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter
+            affogato, hella selvage wolf narwhal dreamcatcher.
           </p>
           <div className="flex w-full md:justify-start justify-center items-end">
             <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4">
-              <label
-                htmlFor="hero-field"
-                className="leading-7 text-sm text-gray-600"
-              >
+              <label htmlFor="hero-field" className="leading-7 text-sm text-gray-600">
                 Placeholder
               </label>
               <input
@@ -65,9 +64,7 @@ const Hero = () => {
                 <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
               </svg>
               <span className="ml-4 flex items-start flex-col leading-none">
-                <span className="text-xs text-gray-600 mb-1">
-                  Download on the
-                </span>
+                <span className="text-xs text-gray-600 mb-1">Download on the</span>
                 <span className="title-font font-medium">App Store</span>
               </span>
             </button>
